@@ -3,7 +3,6 @@ package com.jiuzhang.seckill.db.dao;
 import com.jiuzhang.seckill.db.mappers.SeckillActivityMapper;
 import com.jiuzhang.seckill.db.po.SeckillActivity;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -54,5 +53,10 @@ public class SeckillActivityDaoImpl implements SeckillActivityDao {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public void revertStock(Long seckillActivityId) {
+        seckillActivityMapper.revertStock(seckillActivityId);
     }
 }
